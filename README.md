@@ -1,4 +1,4 @@
-# bouwplannen-op-de-kaart
+# bouwplannen op de kaart
 Geeft een gemeentedekkend actueel overzicht van actuele en historische inrichtingsplannen (IP's) en van programma's van eisen (PvE).
 
 ## toelichting
