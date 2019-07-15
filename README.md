@@ -3,7 +3,7 @@ Geeft een gemeentedekkend actueel overzicht van actuele en historische inrichtin
 
 ## toelichting
 
-De dataset geeft een actueel overzicht van actuele en historische (fasen van) uitgezonden inrichtingsplannen (IP's). Van de uitzendingen wordt de plangrens weergegeven met aanvullende projectgegevens. Het doel is om een overzicht te geven van lopende IP's; het kan daarme een ingang zijn naar de officiele uitzendingen en uitgezonden tekeningen.
+De dataset geeft een actueel overzicht van actuele en historische (fasen van) uitgezonden inrichtingsplannen (IP's). Van de uitzendingen wordt de plangrens weergegeven met aanvullende projectgegevens. Het doel is om een overzicht te geven van lopende IP's; het kan daarmee een ingang zijn naar de officiele uitzendingen en uitgezonden tekeningen.
 
 Een IP kan de volgende fasen doorlopen:
 
