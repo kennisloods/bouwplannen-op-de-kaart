@@ -29,12 +29,52 @@ Het script voert het volgende uit:
 1. inlezen uitzendlijst nieuwe stijl;
 2. inlezen eerder vorig overzicht;
 3. bepalen welke uitgezonden IP's gemuteerd (nieuw of gewijzigd) zijn;
-4. per gemuteerde IP inlezen van de AutoCAD-tekening;
-5. per ingelezen AutoCAD-tekening extraheren van de plancontour;
-6. per ingelezen AutoCAD-tekening extraheren van de oppervlakte bestaand en gepland groen;
-7. Bepalen welke uitzendingen actueel zijn.
+4. opbouwen van een lijst met beschikbare tekeningen
+5. per gemuteerde IP bepalen van de locatie van de tekening in .pdf- en in .dwg-formaat.
+6. per gemuteerde IP inlezen van de AutoCAD-tekening;
+7. per ingelezen AutoCAD-tekening extraheren van de plancontour;
+8. per ingelezen AutoCAD-tekening extraheren van de oppervlakte bestaand en gepland groen;
+9. Bepalen welke uitzendingen actueel zijn;
+10. Bijwerken van jet overzicht.
 
-Ad 6.) Zie volgende paragraaf ([link](#bepalen-bestaand-en-gepland-groen)).
+Ad 3.)
+Een IP is nieuw als het tekeningnummer nog niet in het overzicht voorkwam. Een IP is gewijzigd als het tekeningnummer wel al voorkwam, terwijl de fase is gewijzigd of terwijl de revisie van een bestaande fase is gewijzigd.
+
+Ad 4.) 
+De tekeningen zijn beschikbaar op de K:\-schijf. Om alleen de relevante tekeningen in te kunnen lezen wordt een overzicht gemaakt van beschikbare tekeningen in .pdf- en .-dwg-formaat.
+De gebiedcode, tekeningnummer, uitzendfase en revisie worden afgeleid van de padnaam. Als de revisie onbepaald is wordt deze op `1` gezet.
+
+Gevonden tekeningen doen *niet* mee als de naam een of meer van de volgende tekenreeksen bevat (hoofdletterongevoelig):
+ * `doorsnede`
+ * `gevel`
+ * `xref`
+ * `Profielen`
+ * `overzichtskaart`
+ * `dwarsprofielen`
+ * `ondergrondse infra`
+ * `details`
+ * `brief`
+ * `Beheerparagraaf`
+
+Als er meerdere tekeningen worden gevonden dan wordt de eerstgevonden tekening overgenomen.
+
+Ad 9.)
+Om de plancontour te extraheren wordt uitgevoerd:
+  * inlezen lagen met de namen `X-XX-AL-PROJECTGRENS-G`, `X-XX-AL-WIJZIGINGSGRENS-G`, `X-XX-AL-PROJECTGRENS_IP-G` uit het CAD-bestand;
+  * clippen op de gemeentegrens;
+  * stroken van arcs;
+  * lijnenwerk sluitend maken (binnen 5 meter);
+  * lijnen, arcs, ellipses omzetten naar polygonen;
+  * verwijderen van binnengrenzen;
+  * verwijderen van polygonen zonder oppervlakte;
+  * aggregeren op IP en koppelen aan de IP-gegevens.
+
+Ad 8.) 
+Zie volgende paragraaf ([link](#bepalen-bestaand-en-gepland-groen)).
+
+Ad 9.)
+Als een IP is gewijzigd (zie 3.) en meerdere uitzendfases e/o revisies kent, dan wordt bepaald welke uitzendfase / revisie de meest actuele is. Alle andere uitzendfases / revisies bij hetzelfde IP worden als niet-actueel beschouwd.
+
 
 ### bepalen bestaand en gepland groen
 #### bestaand groen
