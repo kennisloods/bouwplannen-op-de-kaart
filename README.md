@@ -34,7 +34,7 @@ Het script voert het volgende uit:
 6. per ingelezen AutoCAD-tekening extraheren van de oppervlakte bestaand en gepland groen;
 7. Bepalen welke uitzendingen actueel zijn.
 
-Ad 6.) Zie volgende paragraaf ([link](#bepalen_bestaand_en_gepland_groen)).
+Ad 6.) Zie volgende paragraaf ([link](#bepalen-bestaand-en-gepland-groen)).
 
 ### bepalen bestaand en gepland groen
 #### bestaand groen
